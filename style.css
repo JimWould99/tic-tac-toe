@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#board{
+    display: grid;
+    height: 30vw;
+    width: 30vw;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /*
+    grid-template-columns: repeat(3, clamp(150px, 20%, 200px));
+    grid-template-rows: repeat(3, clamp(150px, 20%, 200px)); 
+    background-color: lightgreen; */
+    border: solid 1px black;
+}
+
+h3{
+    position: absolute;
+    left: 75%;
+    bottom: 80%
+}
+
+button{
+    font-size: 3rem;
+}
+
+.second {
+    font-size: 3.5rem;
+    margin-top: 7%;
+    text-decoration: underline;
+    color: lightcoral;
+}
