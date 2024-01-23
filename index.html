@@ -8,8 +8,25 @@
 </head>
 <body>
     <h1>Tic-tac-toe</h1>
-    <div id="board" data-board="board"></div>
-    <h3 data-player="player">Player One`s turn</h3>
+    <div id="half">
+    
+        <form action="">
+            <div id="first">
+                <label for="one">Player one name:</label>
+                <input type="text" name="one" id="one">
+            </div>
+            <div id="second">
+                <label for="one">Player two name:</label>
+                <input type="text" name="two" id="two">
+            </div>
+            <button id="submit" type="submit">Add</button>
+        </form>
+        <div id="board" data-board="board">
+            
+        </div>
+        <h3 data-player="player">Player turn:</h3>
+
+    </div>
     
     <script src="file.js"></script>
 </body>

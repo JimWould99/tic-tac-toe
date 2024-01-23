@@ -12,20 +12,34 @@ body {
     width: 30vw;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    /*
-    grid-template-columns: repeat(3, clamp(150px, 20%, 200px));
-    grid-template-rows: repeat(3, clamp(150px, 20%, 200px)); 
-    background-color: lightgreen; */
-    border: solid 1px black;
 }
 
-h3{
-    position: absolute;
-    left: 75%;
-    bottom: 80%
+
+form{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
 }
 
-button{
+form > button {
+    width: 40%
+}
+
+input[type=text] {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+label{
+    color: blue;
+    text-align: left;
+    margin-bottom: 100px;
+}
+
+#board > button{
     font-size: 3rem;
 }
 
@@ -34,4 +48,19 @@ button{
     margin-top: 7%;
     text-decoration: underline;
     color: lightcoral;
+}
+
+#half{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 3%;
+}
+
+h3{
+    margin: 0px;
+    font-size: 1.5rem;
+}
+
+h1{
+   
 }
