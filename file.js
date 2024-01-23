@@ -1,30 +1,3 @@
-/* 
-planning:
-classes: 
-1. gameboard
-2. squares
-3. controlFlow
-4. player1 and player2 objects (but within the controlFlow)
-
-(later)
-4. display class
-
-logic-- 
-
-1. board divided into 3 rows/columns
-2. gameboard has method of player and coordinate
-3. calls these through the squares class to change a sqaures value, this is then pushed to the board
-4. the game flow object calls methods of gameboard, printing it, and adding sqaures based on consequential 
-coordinate inputs (later will be the dom). game flow also switches player turns. 
-5. 
-a. coordinate is inputted
-b. flow calls on board method to place
-c. updates console/dom based on board
-d. switches players
-e. checks for win based on player objects in gameflow
-(note- when doing the dom. have board/changes displayed independently of game happening)
-
-*/
 
 function Board(){
 
@@ -187,7 +160,16 @@ function Interface(one, two){
         let squaresValues = currentBoard.boardNumbers()
         for (i = 0; i <= squaresValues.length -1; i++) {
             let square = document.createElement('button')
-            square.textContent = squaresValues[i]
+            if (squaresValues[i] == 0) {
+                square.textContent = "E"
+                square.setAttribute('style', 'color: #A9DFBF; font-weight: 700')
+            } else if (squaresValues[i] == 1) {
+                square.textContent = "〇"
+                square.setAttribute('style', 'color: #F1948A; font-weight: 700')
+            } else if (squaresValues[i] == 2) {
+                square.textContent = "✖"
+                square.setAttribute('style', 'color: #FBFCFC')
+            }
             square.setAttribute('data-btn', i)
             domBoard.appendChild(square)
         }
@@ -195,7 +177,6 @@ function Interface(one, two){
 
     updateDisplay()
 
-    
 
     function gameEnd(internal){
         domBoard.remove()
@@ -265,22 +246,3 @@ function Interface(one, two){
         console.log(two.value)
         Interface(one.value, two.value) 
     })
-
-    
-
-
-
-
-/*
-game = GameFlow('spike','MG')
-game.markSquare(0,0)
-game.markSquare(0,1)
-game.markSquare(1,1)
-game.markSquare(0,2)
-game.markSquare(1,2)
-game.markSquare(1,0)
-game.markSquare(2,0)
-game.markSquare(2,2)
-game.markSquare(2,1)
-
-*/
